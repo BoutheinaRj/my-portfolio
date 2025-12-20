@@ -38,12 +38,14 @@ function Navbar() {
 
   return (
     <>
+      {/* Navbar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-white/95 shadow-lg' : 'bg-white/90'
       }`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between py-4">
 
+            {/* Logo */}
             <img
               src={assets.logo}
               alt="Logo"
@@ -51,6 +53,7 @@ function Navbar() {
               onClick={() => navigate('/')}
             />
 
+            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-4">
               {navItems.map(item => (
                 <span
@@ -63,8 +66,9 @@ function Navbar() {
               ))}
             </div>
 
+            {/* Mobile Menu Button */}
             <button
-              className="md:hidden"
+              className="md:hidden text-2xl"
               onClick={() => setVisible(true)}
             >
               ☰
@@ -73,6 +77,29 @@ function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile Menu */}
+      {visible && (
+        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-white/95 z-50 flex flex-col items-center justify-center space-y-6 transition-transform duration-300">
+          {navItems.map(item => (
+            <span
+              key={item.label}
+              onClick={() => handleNavClick(item)}
+              className="cursor-pointer text-xl hover:text-blue-600"
+            >
+              {item.label}
+            </span>
+          ))}
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 text-2xl"
+            onClick={() => setVisible(false)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
+      {/* Spacer to prevent content under navbar */}
       <div className="h-20"></div>
     </>
   );
