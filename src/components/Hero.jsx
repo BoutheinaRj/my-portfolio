@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
-import { Link } from "react-router-dom"; // pour la navigation
-import bgImg from "../assets/aaa.png"; // Image de fond
-import CVBR from "../../public/CVBR.pdf"; // CV PDF
+import { Link } from "react-router-dom";
+import bgImg from "../assets/aaa.png";
 
 function Hero() {
   const [glitters, setGlitters] = useState([]);
 
   useEffect(() => {
-    // Génère 30 glitters avec positions aléatoires
     const generated = Array.from({ length: 30 }, () => ({
       id: Math.random(),
       top: Math.random() * 100,
@@ -30,6 +28,21 @@ function Hero() {
             className="w-full h-full object-cover blur-sm brightness-100"
           />
         </div>
+
+        {/* Glitters */}
+        {glitters.map((g) => (
+          <span
+            key={g.id}
+            className="absolute bg-white rounded-full animate-glitter"
+            style={{
+              top: `${g.top}%`,
+              left: `${g.left}%`,
+              width: `${g.size}px`,
+              height: `${g.size}px`,
+              animationDelay: `${g.delay}s`,
+            }}
+          />
+        ))}
 
         {/* Main content */}
         <div className="relative z-10 h-full flex items-center px-6 sm:px-12 lg:px-20">
@@ -60,9 +73,7 @@ function Hero() {
                   style={{ fontFamily: "'Jost', sans-serif" }}
                 >
                   Specializing in{" "}
-                  <span className="text-blue-300 font-semibold">
-                    Data Science
-                  </span>{" "}
+                  <span className="text-blue-300 font-semibold">Data Science</span>{" "}
                   and{" "}
                   <span className="text-blue-300 font-semibold">
                     Artificial Intelligence
@@ -72,9 +83,8 @@ function Hero() {
 
               {/* Call to action buttons */}
               <div className="flex flex-wrap gap-4 pt-4">
-                {/* Télécharger CV */}
                 <a
-                  href="CVBR.pdf" // PDF dans public
+                  href="/CVBR.pdf"
                   download="CVBR.pdf"
                   className="bg-blue-600 text-white px-6 py-2.5 rounded-md font-medium hover:bg-blue-700 transition-all duration-300 shadow-md flex items-center gap-2 transform hover:-translate-y-1"
                   style={{ fontFamily: "'Jost', sans-serif" }}
@@ -83,7 +93,6 @@ function Hero() {
                   Download CV
                 </a>
 
-                {/* Voir les projets */}
                 <Link
                   to="/projects"
                   className="border-2 border-blue-400 text-blue-300 px-6 py-2.5 rounded-md font-medium hover:bg-blue-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1"
@@ -116,13 +125,13 @@ function Hero() {
               </div>
             </div>
 
-            {/* Right side - Empty space but background glitters visible */}
+            {/* Right side empty */}
             <div></div>
           </div>
         </div>
 
         {/* Animations */}
-        <style jsx>{`
+        <style>{`
           @keyframes slideUp {
             from {
               opacity: 0;
@@ -133,14 +142,7 @@ function Hero() {
               transform: translateY(0);
             }
           }
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
+
           @keyframes glitter {
             0%,
             100% {
@@ -152,6 +154,7 @@ function Hero() {
               opacity: 1;
             }
           }
+
           .animate-glitter {
             animation: glitter 1.5s ease-in-out infinite;
           }
