@@ -17,6 +17,7 @@ function Navbar() {
   const navItems = [
     { label: 'HOME', route: '/' },
     { label: 'ABOUT', route: '/about' },
+    { label: 'SKILLS', route: '/skills' },
     { label: 'PROJECTS', route: '/projects' },
     { label: 'EXPERIENCE', route: '/experience' },
     { label: 'CONTACT', route: '/contact' }
@@ -34,6 +35,18 @@ function Navbar() {
       } else {
         // From any other route (including /about), go to Home and jump to About
         window.location.assign('/#about');
+      }
+    } else if (item.label === 'SKILLS') {
+      if (location.pathname === '/') {
+        const section = document.getElementById('skills');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.assign('/#skills');
+        }
+      } else {
+        // From any other route, go to Home and jump to Skills
+        window.location.assign('/#skills');
       }
     } else if (item.label === 'HOME') {
       navigate('/');

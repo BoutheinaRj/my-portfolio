@@ -119,46 +119,7 @@ function About() {
           </div>
         </div>
 
-        {/* Skills section */}
-        <div
-          className={`mt-16 text-center transform transition-all duration-1000 delay-700 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}
-        >
-          <h3
-            className="text-3xl font-semibold text-gray-900 mb-6"
-            style={{ fontFamily: "'Jost', sans-serif" }}
-          >
-            Technical Expertise
-          </h3>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'JavaScript',
-              'MERN Stack',
-              'PHP',
-              'Symfony',
-              'Spring Boot',
-              'Java',
-              'Python',
-              'MongoDB',
-              'MySQL',
-              'Machine Learning',
-              'Data Analysis',
-              'Data Visualization',
-              'UI/UX Design',
-            ].map((skill, index) => (
-              <span
-                key={skill}
-                className="px-4 py-2 bg-white rounded-full border border-blue-200 text-blue-700 font-medium hover:bg-blue-50 transition-colors duration-300 shadow-sm"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-          
-        </div>
       </div>
     </section>
   );
