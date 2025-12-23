@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { assets } from '../assets/assets';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function Navbar() {
   const [visible, setVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -15,7 +16,7 @@ function Navbar() {
 
   const navItems = [
     { label: 'HOME', route: '/' },
-    { label: 'ABOUT', route: 'about' }, // scroll
+    { label: 'ABOUT', route: '/about' },
     { label: 'PROJECTS', route: '/projects' },
     { label: 'EXPERIENCE', route: '/experience' },
     { label: 'CONTACT', route: '/contact' }
@@ -23,15 +24,23 @@ function Navbar() {
 
   const handleNavClick = (item) => {
     if (item.label === 'ABOUT') {
-      const section = document.getElementById('about');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+      if (location.pathname === '/') {
+        const section = document.getElementById('about');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.assign('/#about');
+        }
+      } else {
+        // From any other route (including /about), go to Home and jump to About
+        window.location.assign('/#about');
       }
     } else if (item.label === 'HOME') {
       navigate('/');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       navigate(item.route);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setVisible(false);
   };

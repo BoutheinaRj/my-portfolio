@@ -7,47 +7,67 @@ function Experience() {
       company: 'Monastir Habib Bourguiba International Airport',
       duration: '2024',
       description:
-        'Developed an intelligent airport assistant robot (Aerobot) capable of scanning passengers’ boarding passes using computer vision and displaying real-time flight information. The system relied on data scraping techniques to retrieve live flight data and presented results through an interactive React-based interface.'
+        'Developed an intelligent airport assistant robot (Aerobot) capable of scanning passengers’ boarding passes using computer vision and displaying real-time flight information. The system relied on data scraping techniques to retrieve live flight data and presented results through an interactive React-based interface.',
+      certificate: '' // Ajouter le lien PDF ici, ex: '/certificates/airport.pdf'
     },
     {
       role: 'Web Development Intern',
       company: 'YOUPTECK',
       duration: 'July 2023 – September 2023',
       description:
-        'Contributed to the design and development of the company’s WordPress website. Actively participated in content creation and integration for both French and English versions of the site. Worked closely with the team while demonstrating creativity, rigor, and strong professional skills.'
+        'Contributed to the design and development of the company’s WordPress website. Actively participated in content creation and integration for both French and English versions of the site. Worked closely with the team while demonstrating creativity, rigor, and strong professional skills.',
+      certificate: '' // Ajouter le lien PDF ici
     },
     {
       role: 'Web Development Intern',
       company: 'NeuralBey',
       duration: 'July 2025 – August 2025',
       description:
-        'Developed the front-end of a corporate website and internship management platform using React.js. Implemented responsive landing pages, services and contact sections, dynamic internship listings, and online application forms. Integrated REST APIs with a Django backend, focusing on clean UI/UX, component reusability, and modern design principles.'
+        'Developed the front-end of a corporate website and internship management platform using React.js. Implemented responsive landing pages, services and contact sections, dynamic internship listings, and online application forms. Integrated REST APIs with a Django backend, focusing on clean UI/UX, component reusability, and modern design principles.',
+      certificate: '' // Ajouter le lien PDF ici
     }
   ];
 
   const trainings = [
     {
+      title: 'Insight Cybersecurity Hackathon—Certificate of Participation',
+      institute: 'IEEE ESPRIM Student Branch',
+      duration: 'November 2025',
+      description:
+        'Participated in a cybersecurity hackathon focused on security challenges and teamwork.',
+      certificate: '' // Ajouter le lien PDF ici
+    },
+    {
       title: 'IoT, AI, and Big Data Workshop',
       institute: 'APII Mahdia',
       duration: 'July 2025',
       description:
-        'Participated in a workshop focused on Internet of Things (IoT), Artificial Intelligence (AI), and Big Data technologies, gaining practical knowledge of data processing, AI integration, and IoT applications.'
+        'Participated in a workshop focused on Internet of Things (IoT), Artificial Intelligence (AI), and Big Data technologies, gaining practical knowledge of data processing, AI integration, and IoT applications.',
+      certificate: '' // Ajouter le lien PDF ici
     },
     {
       title: 'Connected Objects Symposium',
       institute: 'APII Mahdia',
       duration: 'June 2025',
       description:
-        'Attended a symposium focused on connected objects (IoT), discussing emerging technologies, trends, and practical applications in IoT ecosystems.'
+        'Attended a symposium focused on connected objects (IoT), discussing emerging technologies, trends, and practical applications in IoT ecosystems.',
+      certificate: '' // Ajouter le lien PDF ici
     },
     {
       title: 'Ethical Hacking & IoT Cybersecurity',
       institute: 'IT CyberSec Expert',
       duration: 'December 2022',
       description:
-        'Training on ethical hacking principles, IoT security, and penetration testing of IoT equipment.'
+        'Training on ethical hacking principles, IoT security, and penetration testing of IoT equipment.',
+      certificate: '' // Ajouter le lien PDF ici
     }
   ];
+
+  const handleCardClick = (pdfLink) => {
+    if (pdfLink) {
+      window.open(pdfLink, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   // Fonction pour convertir la durée en date pour le tri
   const parseDate = (duration) => {
@@ -85,7 +105,8 @@ function Experience() {
           {sortedInternships.map((exp, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition-shadow duration-300"
+              onClick={() => handleCardClick(exp.certificate)}
+              className={`bg-white p-6 rounded-xl shadow hover:shadow-lg transition-shadow duration-300 ${exp.certificate ? 'cursor-pointer hover:-translate-y-1' : ''}`}
             >
               <h4 className="text-2xl font-semibold text-blue-600 mb-1">{exp.role}</h4>
               <p className="text-sm text-gray-500 mb-2">{exp.company} | {exp.duration}</p>
@@ -102,7 +123,8 @@ function Experience() {
           {sortedTrainings.map((train, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition-shadow duration-300"
+              onClick={() => handleCardClick(train.certificate)}
+              className={`bg-white p-6 rounded-xl shadow hover:shadow-lg transition-shadow duration-300 ${train.certificate ? 'cursor-pointer hover:-translate-y-1' : ''}`}
             >
               <h4 className="text-2xl font-semibold text-blue-600 mb-1">{train.title}</h4>
               <p className="text-sm text-gray-500 mb-2">{train.institute} | {train.duration}</p>

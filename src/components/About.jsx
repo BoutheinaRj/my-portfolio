@@ -157,6 +157,7 @@ function About() {
               </span>
             ))}
           </div>
+          
         </div>
       </div>
     </section>
