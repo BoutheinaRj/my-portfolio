@@ -93,8 +93,8 @@ function Experience() {
   const sortedTrainings = [...trainings].sort((a, b) => parseDate(b.duration) - parseDate(a.duration));
 
   return (
-    <section id="experience" className="min-h-screen p-8 bg-gray-50 text-gray-800">
-      <h2 className="text-5xl font-bold mb-12 text-center text-blue-800" style={{ fontFamily: "'Jost', sans-serif" }}>
+    <section id="experience" className="min-h-screen p-8 bg-blue-100 text-gray-800">
+      <h2 className="text-6xl font-bold mb-12 text-center text-blue-800" style={{ fontFamily: "'Jost', sans-serif" }}>
         Experience & Trainings
       </h2>
 

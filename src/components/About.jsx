@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import img from '../assets/img.png';
+import img from '../assets/emailing.png';
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,7 +49,7 @@ function About() {
                 <img
                   src={img}
                   alt="Boutheina Rjab"
-                  className="w-full h-85 lg:h-70 object-cover rounded-xl"
+                  className="w-full h-auto lg:h-auto object-cover rounded-xl"
                 />
               </div>
 
@@ -65,7 +65,7 @@ function About() {
             }`}
           >
             <h3
-              className="text-2xl font-semibold text-gray-900"
+              className="text-3xl font-semibold text-gray-900"
               style={{ fontFamily: "'Jost', sans-serif" }}
             >
               I'm{' '}

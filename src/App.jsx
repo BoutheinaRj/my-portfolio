@@ -3,9 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Experience from './components/Experience';
-import Contact from './pages/Contact';
+import Contact from './components/Contact';
 import './index.css';
 import Projects from './components/Projects';
+import About from './components/About';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/experience" element={<Experience />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
 
       </Routes>
     </div>

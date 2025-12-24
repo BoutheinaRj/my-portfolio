@@ -12,6 +12,10 @@ import Dental from './Dental.png'
 import Aerobot from './Aerobot.png'
 import aaa from './aaa.png'
 import bb from './bb.png'
+import training1 from './training1.png'
+import training2 from './training2.png'
+import emailing from './emailing.png'
+import Portfolio from './Portfolio.png'
 export const assets ={
     couverture,
     logo,
@@ -27,4 +31,8 @@ export const assets ={
     Aerobot,
     aaa,
     bb,
+    training1,
+    training2,
+    emailing,
+    Portfolio,
 }

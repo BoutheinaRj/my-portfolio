@@ -51,19 +51,19 @@ function Hero() {
             <div className="text-left space-y-6 animate-[slideUp_1s_ease-out]">
               <div className="space-y-3">
                 <h2
-                  className="text-gray-100 text-lg font-medium tracking-wide"
+                  className="text-gray-100 text-2xl font-medium tracking-wide"
                   style={{ fontFamily: "'Jost', sans-serif" }}
                 >
                   Hello, I'm
                 </h2>
                 <h1
-                  className="text-white text-5xl sm:text-5xl font-bold leading-tight"
+                  className="text-white text-6xl sm:text-5xl font-bold leading-tight"
                   style={{ fontFamily: "'Jost', sans-serif" }}
                 >
                   Boutheina Rjab
                 </h1>
                 <h3
-                  className="text-2xl sm:text-3xl font-semibold text-blue-300"
+                  className="text-xl sm:text-xl font-semibold text-blue-300"
                   style={{ fontFamily: "'Jost', sans-serif" }}
                 >
                   Software Engineer
@@ -95,7 +95,7 @@ function Hero() {
 
                 <Link
                   to="/projects"
-                  className="border-2 border-blue-400 text-blue-300 px-6 py-2.5 rounded-md font-medium hover:bg-blue-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+                  className="border-2 border-blue-600 text-blue-400 px-6 py-2.5 rounded-md font-medium hover:bg-blue-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1"
                   style={{ fontFamily: "'Jost', sans-serif" }}
                 >
                   View Projects
@@ -106,19 +106,19 @@ function Hero() {
               <div className="flex gap-3 pt-3">
                 <a
                   href="https://github.com/BoutheinaRj"
-                  className="p-2 rounded-full text-gray-300 hover:bg-blue-200 hover:text-blue-700 transition-all duration-300 transform hover:scale-110"
+                  className="p-2 rounded-full text-gray-300 hover:bg-blue-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-110"
                 >
                   <Github size={20} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/boutheina-rj-b26085225/"
-                  className="p-2 rounded-full text-gray-300 hover:bg-blue-200 hover:text-blue-700 transition-all duration-300 transform hover:scale-110"
+                  className="p-2 rounded-full text-gray-300 hover:bg-blue-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-110"
                 >
                   <Linkedin size={20} />
                 </a>
                 <a
                   href="mailto:Boutheina.RJAB@esprim.tn"
-                  className="p-2 rounded-full text-gray-300 hover:bg-blue-200 hover:text-blue-700 transition-all duration-300 transform hover:scale-110"
+                  className="p-2 rounded-full text-gray-300 hover:bg-blue-300 hover:text-blue-700 transition-all duration-300 transform hover:scale-110"
                 >
                   <Mail size={20} />
                 </a>

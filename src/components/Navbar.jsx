@@ -17,11 +17,19 @@ function Navbar() {
   const navItems = [
     { label: 'HOME', route: '/' },
     { label: 'ABOUT', route: '/about' },
+    { label: 'EDUCATION', route: '/education' },
     { label: 'SKILLS', route: '/skills' },
     { label: 'PROJECTS', route: '/projects' },
     { label: 'EXPERIENCE', route: '/experience' },
     { label: 'CONTACT', route: '/contact' }
   ];
+
+  const isActive = (item) => {
+    if (item.label === 'HOME') {
+      return location.pathname === '/';
+    }
+    return location.pathname === item.route;
+  };
 
   const handleNavClick = (item) => {
     if (item.label === 'ABOUT') {
@@ -35,6 +43,18 @@ function Navbar() {
       } else {
         // From any other route (including /about), go to Home and jump to About
         window.location.assign('/#about');
+      }
+    } else if (item.label === 'EDUCATION') {
+      if (location.pathname === '/') {
+        const section = document.getElementById('education');
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.assign('/#education');
+        }
+      } else {
+        // From any other route, go to Home and jump to Education
+        window.location.assign('/#education');
       }
     } else if (item.label === 'SKILLS') {
       if (location.pathname === '/') {
@@ -81,7 +101,11 @@ function Navbar() {
                 <span
                   key={item.label}
                   onClick={() => handleNavClick(item)}
-                  className="cursor-pointer px-4 py-2 hover:text-blue-600"
+                  className={`cursor-pointer px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                    isActive(item)
+                      ? 'text-blue-700'
+                      : 'text-gray-700 hover:text-blue-500'
+                  }`}
                 >
                   {item.label}
                 </span>
@@ -106,7 +130,11 @@ function Navbar() {
             <span
               key={item.label}
               onClick={() => handleNavClick(item)}
-              className="cursor-pointer text-xl hover:text-blue-600"
+              className={`cursor-pointer text-xl font-medium rounded-lg px-6 py-2 transition-all duration-300 ${
+                isActive(item)
+                  ? 'text-blue-600 bg-blue-100'
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
             >
               {item.label}
             </span>

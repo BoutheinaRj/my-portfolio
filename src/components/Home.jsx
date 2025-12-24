@@ -26,9 +26,6 @@ function Home() {
         className="min-h-screen p-20 bg-gray-200"
       >
         <h2 className="text-4xl font-bold mb-6">Projects</h2>
-        <p>
-          Ici tu peux afficher tes projets, cards, images, GitHub links, etc.
-        </p>
       </section>
 
     </div>
