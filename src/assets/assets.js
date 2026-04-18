@@ -11,11 +11,13 @@ import NutriSmart from './NutriSmart.png'
 import Dental from './Dental.png'
 import Aerobot from './Aerobot.png'
 import aaa from './aaa.png'
-import bb from './bb.png'
+import aa from './aa.png'
 import training1 from './training1.png'
 import training2 from './training2.png'
 import emailing from './emailing.png'
 import Portfolio from './Portfolio.png'
+import photo from './photo.jpeg'
+
 export const assets ={
     couverture,
     logo,
@@ -30,9 +32,10 @@ export const assets ={
     Dental,
     Aerobot,
     aaa,
-    bb,
     training1,
     training2,
     emailing,
     Portfolio,
+    aa,
+    photo,
 }

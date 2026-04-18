@@ -24,10 +24,10 @@ function Education() {
 
  const education = [
   {
-    deree: 'Engineering Degree in Computer Engineering (in progress)',
-    institution: 'ESPRIT Monastir, Tunisia',
+    degree: 'Engineering Cycle in Computer Science - Artificial Intelligence & Data Science (In Progress)',
+    institution: 'ESPRIT, Monastir, Tunisia',
     period: '2024 – Present',
-    description: 'Specialization in Artificial Intelligence & Data Science',
+    description: 'Currently pursuing an engineering degree in Computer Science with a specialization in Artificial Intelligence and Data Science.',
     achievements: []
   },
   {
@@ -50,7 +50,7 @@ function Education() {
     <section
       id="education"
       ref={sectionRef}
-      className="relative bg-gradient-to-br from-blue-200 via-white to-blue-200 py-20 px-6 overflow-hidden" style={{ fontFamily: "'Jost', sans-serif" }}
+      className="relative bg-gradient-to-br from-blue-200 via-white to-blue-300 py-20 px-6 overflow-hidden" style={{ fontFamily: "'Jost', sans-serif" }}
     >
       {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-100 rounded-full opacity-20 blur-xl"></div>

@@ -3,19 +3,25 @@ import NutriSmartImg from '../assets/NutriSmart.png';
 import Dental from '../assets/Dental.png';
 import Aeropot from '../assets/Aerobot.png';
 import PortfolioImg from '../assets/Portfolio.png'; // Ajoute une image pour ton portfolio si tu veux
+import AIRImg from '../assets/aa.png';
 
 function Projects() {
   const projects = [
     {
-      title: 'Personal Portfolio',
-      type: 'Web Development Project',
+      title: 'Artificial Intelligence Recruitment A.I.R ',
+      type: 'AI Recruitment Platform',
       description:
-        'A personal portfolio website built to showcase my web development projects, technical skills, and professional experience. Created using React, Vite, and Tailwind CSS with responsive design and modern animations.',
-      technologies: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'HTML', 'CSS'],
-      image: PortfolioImg,
-      link: 'https://your-portfolio-link.com'
+        'A smart recruitment platform (A.I.R) that analyzes CVs and matches candidate profiles with job requirements using a deep learning model based on spaCy and RoBERTa.',
+      details: [
+        'Parsed and structured CV content automatically from uploaded resumes',
+        'Used a deep learning model (spaCy + RoBERTa) to evaluate candidate-job similarity and generate matching scores',
+        'Displayed ranked candidate profiles with clear indicators for recruiters'
+      ],
+      technologies: ['Python', 'NLP', 'Deep Learning', 'MERN','FastAPI', 'JavaScript'],
+      image: AIRImg,
+      link: '#'
     },
-     {
+    {
       title: 'Dental X-Ray Diagnosis',
       type: 'Machine Learning Web Application',
       description:
@@ -28,6 +34,20 @@ function Projects() {
       technologies: ['Python', 'TensorFlow / PyTorch', 'NumPy', 'Pandas', 'CNN', 'Medical Image Processing'],
       image: Dental,
       link: '#'
+    },
+    {
+      title: 'Personal Portfolio',
+      type: 'Web Development Project',
+      description:
+        'A personal portfolio website designed to present my projects, technical expertise, and professional journey through a modern and responsive interface.',
+      details: [
+        'Built with a component-based architecture using React and Vite for fast performance',
+        'Styled with Tailwind CSS to ensure a clean UI and consistent design system',
+        'Implemented responsive layouts and smooth animations for desktop and mobile'
+      ],
+      technologies: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'HTML', 'CSS'],
+      image: PortfolioImg,
+      link: 'https://your-portfolio-link.com'
     },
     {
       title: 'NutriSmart (PFA)',
@@ -60,7 +80,7 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="min-h-screen p-8 bg-blue-50" style={{ fontFamily: "'Jost', sans-serif" }}>
+    <section id="projects" className="min-h-screen p-8 bg-blue-100" style={{ fontFamily: "'Jost', sans-serif" }}>
       <h2
         className="text-6xl font-bold mb-8 text-center text-blue-800"
         style={{ fontFamily: "'Jost', sans-serif" }}
@@ -118,17 +138,6 @@ function Projects() {
                 </div>
               </div>
 
-              {/* Project Link */}
-{project.link && project.link !== '#' && (
-  <a
-    href={"https://github.com/BoutheinaRj/my-portfolio"}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-6 inline-block text-center bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200"
-  >
-    Code Source →
-  </a>
-)}
             </div>
           </div>
         ))}

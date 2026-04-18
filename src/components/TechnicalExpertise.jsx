@@ -33,6 +33,7 @@ function TechnicalExpertise() {
       skills: [
         { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
         { name: 'PHP', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+        { name: 'DotNet', logo: null },
         { name: 'Symfony', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg' },
         { name: 'Spring Boot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
         { name: 'MERN Stack', logo: null },
@@ -48,10 +49,12 @@ function TechnicalExpertise() {
       ],
     },
     {
-      title: 'Data & AI',
+      title: 'Data, AI & MLOps',
       skills: [
         { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
         { name: 'Machine Learning', logo: null },
+        { name: 'Deep Learning', logo: null },
+        { name: 'MLOps', logo: null },
         { name: 'Data Analysis', logo: null },
         { name: 'Data Visualization', logo: null },
       ],
@@ -72,7 +75,7 @@ function TechnicalExpertise() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative bg-gradient-to-br from-white via-blue-200 to-gray-50 py-20 px-6 overflow-hidden"
+      className="relative bg-gradient-to-br from-white via-blue-300 to-gray-50 py-20 px-6 overflow-hidden"
     >
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-100 rounded-full opacity-20 blur-xl"></div>
       <div className="absolute bottom-20 left-10 w-40 h-40 bg-blue-200 rounded-full opacity-15 blur-2xl"></div>

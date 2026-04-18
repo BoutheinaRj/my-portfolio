@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import img from '../assets/emailing.png';
+import photo from '../assets/photo.jpeg';
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,11 +45,11 @@ function About() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl transform rotate-3 opacity-20"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl transform -rotate-2 opacity-10"></div>
 
-              <div className="relative bg-white rounded-2xl p-2 shadow-2xl">
+              <div className="relative bg-white rounded-2xl p-1 shadow-2xl">
                 <img
-                  src={img}
+                  src={photo}
                   alt="Boutheina Rjab"
-                  className="w-full h-auto lg:h-auto object-cover rounded-xl"
+                  className="block w-10/12 mx-auto h-auto lg:h-auto object-cover rounded-xl"
                 />
               </div>
 
@@ -107,7 +107,7 @@ function About() {
               designing solutions that are both functional and visually clear.
             </p>
 
-            <div className="bg-gradient-to-r from-blue-50 to-white p-6 rounded-xl border-l-4 border-blue-600">
+            <div className="bg-gradient-to-r from-blue-100 to-white p-6 rounded-xl border-l-4 border-blue-600">
               <p
                 className="text-gray-800 leading-relaxed font-medium"
                 style={{ fontFamily: "'Jost', sans-serif" }}

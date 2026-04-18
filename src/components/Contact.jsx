@@ -32,28 +32,25 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-100 relative overflow-hidden pt-16 pb-10 px-4">
+    <div className="min-h-screen relative overflow-hidden pt-20 pb-14 px-4 bg-gradient-to-br from-blue-300 via-blue-100 to-blue-100">
       
       {/* Particules */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-ping opacity-70"></div>
-        <div className="absolute top-32 right-20 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-40 left-1/4 w-2 h-2 bg-indigo-400 rounded-full animate-bounce"></div>
-        <div className="absolute top-1/2 right-16 w-1 h-1 bg-cyan-300 rounded-full animate-ping"></div>
-        <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-blue-300 rounded-full animate-pulse"></div>
+        <div className="absolute -top-16 -left-16 w-72 h-72 bg-blue-200/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 -right-24 w-80 h-80 bg-cyan-200/40 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h1
-            className="text-6xl md:text-6xl text-blue-950 font-extrabold mb-4"
+            className="text-5xl md:text-6xl text-slate-900 font-extrabold mb-4 tracking-tight"
             style={{ fontFamily: "'Jost', sans-serif" }}
           >
             Contact Me
           </h1>
-          <p className="text-blue-950 mt-4 text-lg md:text-xl">
+          <p className="text-slate-600 mt-4 text-lg md:text-xl leading-relaxed">
             Have a project idea, question, or just want to connect? <br />
             I’d love to hear from you!
           </p>
@@ -62,16 +59,16 @@ function Contact() {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-blue-900/30 backdrop-blur-xl rounded-3xl p-8 md:p-12
-                     shadow-2xl shadow-[0_0_40px_rgba(56,189,248,0.15)]
-                     space-y-6 border border-blue-950"
+          className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-10
+                     shadow-[0_20px_60px_rgba(15,23,42,0.12)]
+                     space-y-6 border border-white"
         >
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* First Name */}
             <div className="relative group">
-              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-300 group-focus-within:text-cyan-400 transition-colors" />
+              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
               <input
                 type="text"
                 name="name"
@@ -80,15 +77,15 @@ function Contact() {
                 onChange={handleChange}
                 required
                 className="w-full pl-12 pr-4 py-4
-                           bg-blue-950 border border-blue-500
-                           rounded-2xl text-white placeholder-blue-300
-                           focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition"
+                           bg-slate-50 border border-slate-200
+                           rounded-2xl text-slate-800 placeholder-slate-400
+                           focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
               />
             </div>
 
             {/* Last Name */}
             <div className="relative group">
-              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-300 group-focus-within:text-cyan-400 transition-colors" />
+              <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
               <input
                 type="text"
                 name="surname"
@@ -97,16 +94,16 @@ function Contact() {
                 onChange={handleChange}
                 required
                 className="w-full pl-12 pr-4 py-4
-                           bg-blue-950 border border-blue-500
-                           rounded-2xl text-white placeholder-blue-300
-                           focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition"
+                           bg-slate-50 border border-slate-200
+                           rounded-2xl text-slate-800 placeholder-slate-400
+                           focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
               />
             </div>
           </div>
 
           {/* Email */}
           <div className="relative group">
-            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-300 group-focus-within:text-cyan-400 transition-colors" />
+            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
             <input
               type="email"
               name="email"
@@ -115,15 +112,15 @@ function Contact() {
               onChange={handleChange}
               required
               className="w-full pl-12 pr-4 py-4
-                         bg-blue-950 border border-blue-500
-                         rounded-2xl text-white placeholder-blue-300
-                         focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition"
+                         bg-slate-50 border border-slate-200
+                         rounded-2xl text-slate-800 placeholder-slate-400
+                         focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
             />
           </div>
 
           {/* Subject */}
           <div className="relative group">
-            <MessageCircle className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-300 group-focus-within:text-cyan-400 transition-colors" />
+            <MessageCircle className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
             <input
               type="text"
               name="subject"
@@ -132,15 +129,15 @@ function Contact() {
               onChange={handleChange}
               required
               className="w-full pl-12 pr-4 py-4
-                         bg-blue-950 border border-blue-500
-                         rounded-2xl text-white placeholder-blue-300
-                         focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition"
+                         bg-slate-50 border border-slate-200
+                         rounded-2xl text-slate-800 placeholder-slate-400
+                         focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
             />
           </div>
 
           {/* Message */}
           <div className="relative group">
-            <MessageCircle className="absolute left-4 top-4 w-5 h-5 text-blue-300 group-focus-within:text-cyan-400 transition-colors" />
+            <MessageCircle className="absolute left-4 top-4 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
             <textarea
               name="message"
               placeholder="Your message..."
@@ -149,9 +146,9 @@ function Contact() {
               onChange={handleChange}
               required
               className="w-full pl-12 pr-4 py-4
-                         bg-blue-950 border border-blue-500
-                         rounded-2xl text-white placeholder-blue-300
-                         focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400
+                         bg-slate-50 border border-slate-200
+                         rounded-2xl text-slate-800 placeholder-slate-400
+                         focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500
                          transition resize-none"
             />
           </div>
@@ -160,10 +157,10 @@ function Contact() {
           <button
             type="submit"
             className="w-full md:w-auto mx-auto flex items-center justify-center gap-3
-                       bg-gradient-to-r from-blue-800 to-blue-600
-                       hover:from-blue-800 hover:to-cyan-400
+                       bg-gradient-to-r from-slate-900 to-blue-700
+                       hover:from-slate-800 hover:to-blue-600
                        text-white font-semibold py-4 px-8
-                       rounded-2xl shadow-xl
+                       rounded-2xl shadow-lg
                        transform hover:scale-105 transition-all"
           >
             <Send className="w-5 h-5" />
