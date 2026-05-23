@@ -17,6 +17,8 @@ import training2 from './training2.png'
 import emailing from './emailing.png'
 import Portfolio from './Portfolio.png'
 import photo from './photo.jpeg'
+import TumorAIImage from './TumorAIImage.png'
+import LivraisonImage from './LivraisonImage.png'
 
 export const assets ={
     couverture,
@@ -38,4 +40,6 @@ export const assets ={
     Portfolio,
     aa,
     photo,
+    TumorAIImage,
+    LivraisonImage,
 }

@@ -4,14 +4,16 @@ import Dental from '../assets/Dental.png';
 import Aeropot from '../assets/Aerobot.png';
 import PortfolioImg from '../assets/Portfolio.png'; // Ajoute une image pour ton portfolio si tu veux
 import AIRImg from '../assets/aa.png';
+import TumorAIImage from '../assets/TumorAIImage.png';
+import LivraisonImage from '../assets/LivraisonImage.png';
 
 function Projects() {
   const projects = [
     {
-      title: 'Artificial Intelligence Recruitment A.I.R ',
+      title: 'Artificial Intelligence Recruitment ForsaTech ',
       type: 'AI Recruitment Platform',
       description:
-        'A smart recruitment platform (A.I.R) that analyzes CVs and matches candidate profiles with job requirements using a deep learning model based on spaCy and RoBERTa.',
+        'A smart recruitment platform (ForsaTech) that analyzes CVs and matches candidate profiles with job requirements using a deep learning model based on spaCy and RoBERTa.',
       details: [
         'Parsed and structured CV content automatically from uploaded resumes',
         'Used a deep learning model (spaCy + RoBERTa) to evaluate candidate-job similarity and generate matching scores',
@@ -21,6 +23,38 @@ function Projects() {
       image: AIRImg,
       link: '#'
     },
+  {
+  title: 'OncoScan IA – Brain Tumor & Breast Cancer',
+  type: 'Deep Learning Medical Diagnosis',
+  description:
+    'Automatic brain tumor classification on MRI (4 classes) and breast cancer (IDC+) detection on histopathology images, with a doctor-friendly interface and explainable models.',
+  details: [
+    'Brain: 4 classes (Glioma, Meningioma, Normal, Pituitary) – 92% accuracy, 0.97 AUC',
+    'Breast: IDC+ detection – 94% sensitivity, 88% accuracy',
+    'Preprocessing: undersampling, augmentations, fine-tuning (brain)',
+    'Streamlit interface for fast predictions',
+    'Deployment: FastAPI + Docker'
+  ],
+  technologies: ['Python', 'TensorFlow', 'Keras', 'CNN', 'Streamlit', 'FastAPI', 'Docker', 'OpenCV'],
+  image: TumorAIImage,
+  link: '#'
+},
+{
+  title: 'LivraisonApp – Parcel & Delivery System',
+  type: 'ASP.NET Core MVC Web App',
+  description:
+    'A delivery management platform with role-based access, parcel tracking, customer and driver management, and an admin dashboard for revenue statistics.',
+  details: [
+    'Full parcel CRUD operations',
+    'Customer, driver, and vehicle management',
+    'Role-based authentication (Admin / User)',
+    'Admin dashboard with stats and revenue',
+    'Parcel image upload support'
+  ],
+  technologies: ['C#', 'ASP.NET Core MVC', 'Entity Framework Core', 'Identity', 'SQLite', 'Bootstrap'],
+  image: LivraisonImage,
+  link: '#'
+},
     {
       title: 'Dental X-Ray Diagnosis',
       type: 'Machine Learning Web Application',
