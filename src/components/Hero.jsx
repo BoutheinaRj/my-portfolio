@@ -84,8 +84,8 @@ function Hero() {
               {/* Call to action buttons */}
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="/CVBR.pdf"
-                  download="CVBR.pdf"
+                  href="/BRCv.pdf"
+                  download="BRCv.pdf"
                   className="bg-blue-600 text-white px-6 py-2.5 rounded-md font-medium hover:bg-blue-700 transition-all duration-300 shadow-md flex items-center gap-2 transform hover:-translate-y-1"
                   style={{ fontFamily: "'Jost', sans-serif" }}
                 >
