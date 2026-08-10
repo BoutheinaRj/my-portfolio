@@ -25,6 +25,14 @@ function Experience() {
       description:
         'Developed the front-end of a corporate website and internship management platform using React.js. Implemented responsive landing pages, services and contact sections, dynamic internship listings, and online application forms. Integrated REST APIs with a Django backend, focusing on clean UI/UX, component reusability, and modern design principles.',
       certificate: '' // Ajouter le lien PDF ici
+    },
+    {
+      role: 'AI & Data Science Intern',
+      company: 'Tradrly',
+      duration: '15 Jun – 15 Aug 2026',
+      description:
+        'Developed AI modules for an intelligent educational robot, including multilingual conversational AI, a RAG-based knowledge system, and REST APIs using FastAPI and Gemini.',
+      certificate: '' // Ajouter le lien PDF ici
     }
   ];
 
