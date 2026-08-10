@@ -24,10 +24,10 @@ function Education() {
 
  const education = [
   {
-    degree: 'Engineering Cycle in Computer Science - Artificial Intelligence & Data Science (In Progress)',
-    institution: 'ESPRIT, Monastir, Tunisia',
-    period: '2024 – Present',
-    description: 'Currently pursuing an engineering degree in Computer Science with a specialization in Artificial Intelligence and Data Science.',
+    degree: 'Computer Engineering AI & Data Science Specialization',
+    institution: 'ESPRIM, Tunisia',
+    period: '2024 - Expected Graduation 2027',
+    description: '',
     achievements: []
   },
   {
