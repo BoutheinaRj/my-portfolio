@@ -6,9 +6,26 @@ import PortfolioImg from '../assets/Portfolio.png'; // Ajoute une image pour ton
 import AIRImg from '../assets/aa.png';
 import TumorAIImage from '../assets/TumorAIImage.png';
 import LivraisonImage from '../assets/LivraisonImage.png';
+import LumiaImg from '../assets/LumiaImg.png';
 
 function Projects() {
   const projects = [
+    {
+  title: 'LUMIA – AI Skin Care Recommendation Platform',
+  type: 'Personal Summer Project | Full Stack + Computer Vision',
+  description:
+    'A full-stack mobile platform that combines facial image analysis with AI to recommend personalized natural homemade remedies and parapharmacy skincare products, while also facilitating direct connections with dermatologists for professional consultations.',
+  details: [
+    'Developing a cross-platform mobile application using React Native for a smooth, native-like user experience',
+    'Implementing facial skin analysis (dryness, oiliness, acne, wrinkles, redness) using Python-based Computer Vision (OpenCV) and Deep Learning models for accurate condition classification',
+    'Designing a dual recommendation engine: suggests DIY natural homemade recipes (honey, aloe vera, oats) and curated parapharmacy products (serums, creams, cleansers) based on the user\'s skin profile',
+    'Building a scalable RESTful API with Node.js, Express.js, and MongoDB for user authentication, skin history tracking, and product/remedy database management',
+    'Integrating a dermatologist connection module, allowing users to book online consultations or share their skin analysis reports directly with professionals for expert follow-up'
+  ],
+  technologies: ['React Native', 'Node.js', 'Express.js', 'MongoDB', 'Python', 'Computer Vision (OpenCV)', 'Deep Learning'],
+  image: LumiaImg,
+  link: '#'
+},
     {
       title: 'Artificial Intelligence Recruitment ForsaTech ',
       type: 'AI Recruitment Platform',

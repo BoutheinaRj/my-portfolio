@@ -19,6 +19,7 @@ import Portfolio from './Portfolio.png'
 import photo from './photo.jpeg'
 import TumorAIImage from './TumorAIImage.png'
 import LivraisonImage from './LivraisonImage.png'
+import LumiaImg from './LumiaImg.png' // Assuming you have an image for the Lumia project
 
 export const assets ={
     couverture,
@@ -42,4 +43,5 @@ export const assets ={
     photo,
     TumorAIImage,
     LivraisonImage,
+    LumiaImg,
 }
