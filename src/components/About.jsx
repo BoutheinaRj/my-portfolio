@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import photo from '../assets/photo.jpeg';
+import photo from '../assets/prof_blur.jpg';
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -46,11 +46,14 @@ function About() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl transform -rotate-2 opacity-10"></div>
 
               <div className="relative bg-white rounded-2xl p-1 shadow-2xl">
-                <img
-                  src={photo}
-                  alt="Boutheina Rjab"
-                  className="block w-10/12 mx-auto h-auto lg:h-auto object-cover rounded-xl"
-                />
+                <div className="w-10/12 mx-auto aspect-[4/5] overflow-hidden rounded-xl">
+                  <img
+                    src={photo}
+                    alt="Boutheina Rjab"
+                    className="block w-full h-full object-cover scale-125"
+                    style={{ transformOrigin: '48% 30%' }}
+                  />
+                </div>
               </div>
 
               <div className="absolute -top-6 -right-6 w-12 h-12 bg-blue-600 rounded-full opacity-80 animate-pulse"></div>
@@ -68,25 +71,29 @@ function About() {
               className="text-3xl font-semibold text-gray-900"
               style={{ fontFamily: "'Jost', sans-serif" }}
             >
-              I'm{' '}
-              <span className="text-blue-700">Boutheina Rjab</span>
+              Hi, I'm{' '}
+              <span className="text-blue-700">Boutheina Rjab</span> 👋
             </h3>
 
             <p
               className="text-lg text-gray-700 leading-relaxed"
               style={{ fontFamily: "'Jost', sans-serif" }}
             >
-              I’m a second-cycle engineering student specializing in{' '}
+              I’m a final-year Computer Engineering student specializing in{' '}
               <span className="font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded">
-                Data Science
+                Artificial Intelligence
               </span>{' '}
               and{' '}
               <span className="font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded">
-                Artificial Intelligence
-              </span>
-              , with a strong interest in{' '}
+                Data Science
+              </span>{' '}
+              at ESPRIM, with a strong interest in{' '}
               <span className="font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded">
-                web development
+                AI engineering
+              </span>{' '}
+              and{' '}
+              <span className="font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded">
+                full-stack web development
               </span>.
             </p>
 
@@ -94,17 +101,24 @@ function About() {
               className="text-lg text-gray-700 leading-relaxed"
               style={{ fontFamily: "'Jost', sans-serif" }}
             >
-              I build modern, responsive, and user-friendly web applications, and I enjoy integrating
-              data and AI to create smart, practical features. Through my studies and projects, I’ve
-              gained solid skills in programming, algorithms, and data analysis.
+              I build modern, responsive, and user-friendly applications, combining{' '}
+              <span className="font-semibold text-blue-700">web technologies, data science, and AI</span>{' '}
+              to develop intelligent, practical solutions. My experience spans{' '}
+              <span className="font-semibold text-blue-700">
+                machine learning, deep learning, Natural Language Processing (NLP), Large Language
+                Models (LLMs), Retrieval-Augmented Generation (RAG), and AI Agents
+              </span>.
             </p>
 
             <p
               className="text-lg text-gray-700 leading-relaxed"
               style={{ fontFamily: "'Jost', sans-serif" }}
             >
-              I’m particularly interested in working at the intersection of web technologies and AI,
-              designing solutions that are both functional and visually clear.
+              I’m particularly interested in developing intelligent applications powered by{' '}
+              <span className="font-semibold text-blue-700">
+                Generative AI, conversational agents, and data-driven systems
+              </span>
+              , from backend APIs and database design to intuitive user interfaces.
             </p>
 
             <div className="bg-gradient-to-r from-blue-100 to-white p-6 rounded-xl border-l-4 border-blue-600">
@@ -112,8 +126,9 @@ function About() {
                 className="text-gray-800 leading-relaxed font-medium"
                 style={{ fontFamily: "'Jost', sans-serif" }}
               >
-                My goal is to continuously grow in web development, data science, and AI, and to build
-                digital products with real-world impact.
+                My goal is to continuously grow as an{' '}
+                <span className="font-semibold text-blue-700">AI Engineer and Full-Stack Developer</span>,
+                transforming innovative ideas into reliable digital products with real-world impact.
               </p>
             </div>
           </div>

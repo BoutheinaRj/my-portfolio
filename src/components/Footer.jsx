@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="bg-blue-950 text-gray-300 py-6">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-        
+
         {/* Main text */}
         <p className="text-sm md:text-base">
           2025 &copy; - Made by <span className="font-semibold">Boutheina Rjab</span>
