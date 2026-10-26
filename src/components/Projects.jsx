@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NutriSmartImg from '../assets/NutriSmart.png';
 import Dental from '../assets/Dental.png';
 import Aeropot from '../assets/Aerobot.png';
@@ -7,9 +7,60 @@ import AIRImg from '../assets/aa.png';
 import TumorAIImage from '../assets/TumorAIImage.png';
 import LivraisonImage from '../assets/LivraisonImage.png';
 import LumiaImg from '../assets/LumiaImg.png';
+import TradroroImg from '../assets/Tradroro.png';
+import DoobyImg from '../assets/Dooby.png';
 
 function Projects() {
+  const [activeDemo, setActiveDemo] = useState(null);
+
+  useEffect(() => {
+    if (!activeDemo) return;
+    const onKeyDown = (e) => e.key === 'Escape' && setActiveDemo(null);
+    document.addEventListener('keydown', onKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [activeDemo]);
+
   const projects = [
+    {
+      title: 'Tradroro – AI-Powered Productivity Assistant',
+      type: 'Internship Project | Tradrly | 2026',
+      description:
+        'A desktop productivity module featuring NOVA, an AI assistant that manages tasks, calendar and Pomodoro sessions through natural language and voice commands.',
+      details: [
+        'LLM (Google Gemini) for intent understanding, multi-turn conversational context and multilingual interaction (French, English, Arabic, Arabizi)',
+        'Local NLP layer: spaCy for entity extraction, Sentence-Transformers for intent classification by semantic similarity, dateparser for natural-language dates',
+        'Voice control with speech recognition (STT) and speech synthesis (TTS)',
+        'Desktop automation from the assistant: launching apps, adjusting volume and locking the screen'
+      ],
+      technologies: ['React', 'TypeScript', 'Electron', 'Node.js', 'Express', 'FastAPI', 'Python', 'Gemini', 'spaCy', 'Sentence-Transformers', 'SQLAlchemy', 'SQLite', 'Material UI'],
+      image: TradroroImg,
+      imagePosition: 'center top',
+      github: 'https://github.com/BoutheinaRj/Tradroro',
+      demo: '/videos/Tradroro-demo.mp4',
+      link: '#'
+    },
+    {
+      title: 'Dooby – AI Educational Robot for Children',
+      type: 'Internship Project | Tradrly | 2026',
+      description:
+        'AI modules for an educational voice robot that answers children\'s questions at the right level, grounded in the official Tunisian school curriculum. I built the educational knowledge base and the RAG API connecting the robot to it.',
+      details: [
+        'Built a knowledge base from ~400 PDFs (official curricula, textbooks, workbooks): 667 chunks covering 6 grade levels, 12 subjects and 3 languages',
+        'PDF ingestion pipeline: text/scan detection, extraction with PyMuPDF or Tesseract OCR, cleaning, chunking (500 words, 50 overlap), metadata, embeddings',
+        'RAG pipeline: language detection, hybrid retrieval (RRF + MMR) and Gemini answers adapted to the child\'s age and level, returned as JSON',
+        'FastAPI service (/health, /search, /answer) between the robot and the knowledge base — 3 sources retrieved and an answer in 2–4 s in integration tests'
+      ],
+      technologies: ['Python', 'RAG', 'Gemini', 'FastAPI', 'Embeddings', 'Semantic Search', 'PyMuPDF', 'Tesseract OCR', 'NLP'],
+      image: DoobyImg,
+      imagePosition: 'center top',
+      github: 'https://github.com/BoutheinaRj/plateforme-pedagogique-rag',
+      demo: '/videos/Dooby-demo.mp4',
+      link: '#'
+    },
     {
   title: 'LUMIA – AI Skin Care Recommendation Platform',
   type: 'Personal Summer Project | Full Stack + Computer Vision',
@@ -146,11 +197,31 @@ function Projects() {
           >
             {/* Project Image */}
             {project.image && (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover rounded-t-xl"
-              />
+              <div className="relative group">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover rounded-t-xl"
+                  style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+                />
+                {project.demo && (
+                  <button
+                    type="button"
+                    onClick={() => setActiveDemo(project)}
+                    aria-label={`Watch the ${project.title} demo`}
+                    className="absolute inset-0 flex items-center justify-center rounded-t-xl bg-black/20 group-hover:bg-black/40 transition-colors duration-300 cursor-pointer"
+                  >
+                    <span className="flex items-center justify-center w-16 h-16 rounded-full bg-white/90 text-blue-700 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <svg viewBox="0 0 24 24" className="w-7 h-7 ml-1" fill="currentColor" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
+                    <span className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-medium">
+                      Demo video
+                    </span>
+                  </button>
+                )}
+              </div>
             )}
 
             <div className="p-6 flex flex-col flex-grow">
@@ -189,10 +260,67 @@ function Projects() {
                 </div>
               </div>
 
+              {(project.github || project.demo) && (
+                <div className="mt-auto pt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+                  {project.demo && (
+                    <button
+                      type="button"
+                      onClick={() => setActiveDemo(project)}
+                      className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline cursor-pointer"
+                    >
+                      ▶ Watch the demo
+                    </button>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                      🔗 Explore the project on GitHub
+                    </a>
+                  )}
+                </div>
+              )}
+
             </div>
           </div>
         ))}
       </div>
+
+      {/* Demo video modal */}
+      {activeDemo && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setActiveDemo(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${activeDemo.title} demo`}
+        >
+          <div className="relative w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-3 text-white">
+              <h3 className="text-lg md:text-xl font-semibold">{activeDemo.title}</h3>
+              <button
+                type="button"
+                onClick={() => setActiveDemo(null)}
+                aria-label="Close demo"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/25 text-2xl leading-none cursor-pointer"
+              >
+                ×
+              </button>
+            </div>
+            <video
+              src={activeDemo.demo}
+              poster={activeDemo.image}
+              controls
+              autoPlay
+              playsInline
+              className="w-full max-h-[80vh] rounded-xl shadow-2xl bg-black"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

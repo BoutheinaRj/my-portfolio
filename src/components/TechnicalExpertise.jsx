@@ -54,9 +54,11 @@ function TechnicalExpertise() {
         { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
         { name: 'Machine Learning', logo: null },
         { name: 'Deep Learning', logo: null },
+        { name: 'NLP', logo: null },
+        { name: 'LLMs & Generative AI', logo: null },
+        { name: 'RAG', logo: null },
         { name: 'MLOps', logo: null },
-        { name: 'Data Analysis', logo: null },
-        { name: 'Data Visualization', logo: null },
+        { name: 'Data Analysis & Visualization', logo: null },
       ],
     },
     {
@@ -80,7 +82,7 @@ function TechnicalExpertise() {
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-100 rounded-full opacity-20 blur-xl"></div>
       <div className="absolute bottom-20 left-10 w-40 h-40 bg-blue-200 rounded-full opacity-15 blur-2xl"></div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div
           className={`text-center transform transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -95,11 +97,11 @@ function TechnicalExpertise() {
           {categories.map((cat, catIndex) => (
             <div key={cat.title} className="mb-10">
               <h3 className="text-2xl font-semibold text-blue-600 mb-3">{cat.title}</h3>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap lg:flex-nowrap justify-center gap-3">
                 {cat.skills.map((skill, index) => (
                   <div
                     key={skill.name}
-                    className={`flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-blue-500 text-blue-800 font-medium shadow-sm transform transition-all duration-500 ${
+                    className={`flex items-center gap-2 px-4 py-2 whitespace-nowrap bg-white rounded-full border border-blue-500 text-blue-800 font-medium shadow-sm transform transition-all duration-500 ${
                       isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
                     }`}
                     style={{
